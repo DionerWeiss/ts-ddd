@@ -30,8 +30,11 @@ export class ProductRepository implements ProductRepositoryInterface {
     return new Product(productModel.id, productModel.name, productModel.price);
   }
 
-  findAll(): Promise<Product[]> {
-    throw new Error("Method not implemented.");
+  async findAll(): Promise<Product[]> {
+    const productModels = await ProductModel.findAll();
+    return productModels.map((productModel) =>
+      new Product(productModel.id, productModel.name, productModel.price)
+    );
   }
   
 }
