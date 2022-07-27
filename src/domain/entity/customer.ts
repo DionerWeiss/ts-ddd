@@ -1,4 +1,4 @@
-import Address from "../value-object/address";
+import { Address } from "../value-object/address";
 
 export class Customer {
   private _id: string;
@@ -29,6 +29,10 @@ export class Customer {
     this._address = address;
   }
 
+  get Address(): Address {
+    return this._address;
+  }
+
   validate() {
     if (this._id.length === 0) {
       throw new Error('Id is required');
@@ -51,6 +55,10 @@ export class Customer {
 
   deactivate() {
     this._active = false;
+  }
+
+  changeAddress(address: Address) {
+    this._address = address;
   }
 
   isActive() {
