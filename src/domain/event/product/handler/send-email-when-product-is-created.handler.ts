@@ -3,7 +3,7 @@ import { ProductCreatedEvent } from "../product-created.event";
 
 export class SendEmailWhenProductIsCreatedHandler implements EventHandlerInterface {
 
-  async handle(event: ProductCreatedEvent): Promise<void> {
+  handle(event: ProductCreatedEvent): void {
     console.log(`Sending email to ${event.eventData.email}`);
   }
 }
