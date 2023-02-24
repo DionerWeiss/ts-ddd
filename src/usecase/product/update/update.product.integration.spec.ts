@@ -4,7 +4,7 @@ import { ProductModel } from "../../../infra/product/repository/sequelize/produc
 import { ProductRepository } from "../../../infra/product/repository/sequelize/product.repository";
 import { UpdateProductUseCase } from "./update.product.usecase";
 
-describe('Update Create Product UseCase Integration Test', () => {
+describe('Update Product UseCase Integration Test', () => {
   let sequelize: Sequelize;
 
   beforeEach(async () => {
@@ -23,7 +23,7 @@ describe('Update Create Product UseCase Integration Test', () => {
     await sequelize.close();
   });
 
-  it('should create a product ', async () => {
+  it('should update a product ', async () => {
     const productRepository = new ProductRepository();
     const usecase = new UpdateProductUseCase(productRepository)
 
