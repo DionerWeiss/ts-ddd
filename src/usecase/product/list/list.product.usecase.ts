@@ -1,4 +1,4 @@
-import { Product } from "../../../domain/product/entity/product";
+import { ProductInterface } from "../../../domain/product/entity/produc.interface";
 import { ProductRepositoryInterface } from "../../../domain/product/repository/product-repository.interface";
 import { InputListProductsDto, OutputListProductsDto } from "./list.product.dto";
 
@@ -12,7 +12,7 @@ export class ListProductsUseCase {
 }
 
 class OutputMapper {
-  static toOutput(products: Product[]): OutputListProductsDto {
+  static toOutput(products: ProductInterface[]): OutputListProductsDto {
     return {
       products: products.map(product => ({
         id: product.id,

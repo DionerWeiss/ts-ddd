@@ -40,7 +40,7 @@ describe("Unit test for customer update use case", () => {
 
     input.name = ""
 
-    await expect(customerUpdateUseCase.execute(input)).rejects.toThrow("Name is required")
+    await expect(customerUpdateUseCase.execute(input)).rejects.toThrow("customer: Name is required")
 
   });
 
