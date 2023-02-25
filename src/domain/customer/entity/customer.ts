@@ -13,8 +13,6 @@ export class Customer extends Entity{
     this._id = id;
     this._name = name;
     this.validate();
-
-   
   }
 
   get name() {
